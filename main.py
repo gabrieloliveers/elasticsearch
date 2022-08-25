@@ -1,12 +1,9 @@
-from elasticsearch import Elasticsearch, helpers
-import configparser
-
-config = configparser.ConfigParser()
-config.read('elastic.ini')
+from poplib import POP3_SSL_PORT
+from elasticsearch import Elasticsearch
 
 es = Elasticsearch(
-      cloud_id=config['ELASTIC']['cloud_id'],
-      basic_auth=(config['ELASTIC']['user'], config['ELASTIC']['password'])
+    ['127.0.1.1'],
+    POP3_SSL_PORT=9200,
 )
+print(es.info())
 
-es.info()
