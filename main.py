@@ -8,6 +8,7 @@ es = Elasticsearch(
     ['127.0.1.1'],
     POP3_SSL_PORT=9200,
 )
+#me tras as informações do elastic local
 print(es.info())
 
 #aqui eu to criando uma variavel com os dados do documento que eu quero inserir
